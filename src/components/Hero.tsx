@@ -78,15 +78,9 @@ export const Hero = () => {
               variants={itemVariants}
               className="text-lg text-white/60 mb-8 max-w-2xl"
             >
-              I build fast, scalable web applications using{' '}
-              <span className="text-white font-medium">
-                React, Node.js, Express, and MongoDB
-              </span>
-              . I also explore{' '}
-              <span className="text-white font-medium">
-                Google Cloud & AI
-              </span>{' '}
-              to create practical, real-world solutions.
+              I have a passion for building scalable web applications and
+              intelligent systems that solve real-world problems. Let's create
+              something amazing together!
             </motion.p>
 
             {/* CTAs */}

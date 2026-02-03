@@ -7,7 +7,7 @@ const projects = [
     title: "Bus Pass Management System",
     description:
       "A digital bus pass generation and verification system for students. Includes admin approval, student ID validation, renewal workflow, and secure backend data storage.",
-    tags: ["React", "Node.js", "Express", "MongoDB"],
+    tags: ["React", "Firebase"],
     color: "from-blue-500 to-cyan-600",
     code: "#",
     demo: "https://buss-passfinal-chi.vercel.app/",

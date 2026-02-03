@@ -1,28 +1,51 @@
 import { motion } from 'framer-motion';
 import { Mail, Send, Linkedin, MessageCircle } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 
 export const Contact = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const formRef = useRef<HTMLFormElement | null>(null);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulated submit (replace later with Formspree / EmailJS)
-    setTimeout(() => {
+    try {
+      if (!formRef.current) {
+        throw new Error('Form not ready');
+      }
+
+      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID as string;
+      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID as string;
+      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY as string;
+
+      if (!serviceId || !templateId || !publicKey) {
+        throw new Error('EmailJS env variables are missing');
+      }
+
+      await emailjs.sendForm(serviceId, templateId, formRef.current, {
+        publicKey,
+      });
+
       toast({
         title: 'Message sent successfully!',
         description: 'Thanks for reaching out. I’ll respond within 24 hours.',
       });
+      formRef.current.reset();
+    } catch (error) {
+      toast({
+        title: 'Message failed to send',
+        description: 'Please try again or reach out via email/WhatsApp.',
+      });
+    } finally {
       setIsSubmitting(false);
-      (e.target as HTMLFormElement).reset();
-    }, 1200);
+    }
   };
 
   return (
@@ -128,6 +151,7 @@ export const Contact = () => {
             transition={{ duration: 0.5 }}
           >
             <form
+              ref={formRef}
               onSubmit={handleSubmit}
               className="
                 rounded-2xl border border-white/10
@@ -140,6 +164,7 @@ export const Contact = () => {
                 placeholder="Your Name"
                 required
                 disabled={isSubmitting}
+                name="from_name"
                 className="bg-white/5 border-white/10 text-white placeholder:text-white/40"
               />
 
@@ -148,6 +173,7 @@ export const Contact = () => {
                 placeholder="Your Email"
                 required
                 disabled={isSubmitting}
+                name="reply_to"
                 className="bg-white/5 border-white/10 text-white placeholder:text-white/40"
               />
 
@@ -156,6 +182,7 @@ export const Contact = () => {
                 placeholder="Subject"
                 required
                 disabled={isSubmitting}
+                name="subject"
                 className="bg-white/5 border-white/10 text-white placeholder:text-white/40"
               />
 
@@ -164,6 +191,7 @@ export const Contact = () => {
                 rows={5}
                 required
                 disabled={isSubmitting}
+                name="message"
                 className="
                   resize-none bg-white/5
                   border-white/10 text-white
