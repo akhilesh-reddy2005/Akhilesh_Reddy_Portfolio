@@ -71,77 +71,67 @@ export const Contact = () => {
         <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
           {/* Left: Contact Info */}
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="
-              rounded-2xl border border-white/10
-              bg-white/5 backdrop-blur-md
-              p-8
-            "
-          >
-            <h3 className="text-2xl font-display font-semibold mb-6 text-white">
-              Let’s Connect
-            </h3>
+  initial={{ opacity: 0, x: -20 }}
+  whileInView={{ opacity: 1, x: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.5 }}
+  className="
+    rounded-2xl border border-white/10
+    bg-white/5 backdrop-blur-md
+    p-8
+  "
+>
+  <h3 className="text-2xl font-display font-semibold mb-4 text-white">
+    Let’s Connect
+  </h3>
 
-            <div className="space-y-6">
-              {/* Email */}
-              <div className="flex items-center gap-4">
-                <div className="p-3 rounded-xl bg-gradient-to-br from-primary to-secondary">
-                  <Mail className="h-5 w-5 text-white" />
-                </div>
-                <div>
-                  <p className="font-medium text-white">Email</p>
-                  <a
-                    href="mailto:akhileshreddy1246@gmail.com"
-                    className="text-white/70 hover:text-white hover:underline"
-                  >
-                    akhileshreddy1246@gmail.com
-                  </a>
-                </div>
-              </div>
+  <p className="text-white/60 mb-8 leading-relaxed">
+    Whether you’re looking to collaborate on a project, discuss an opportunity,
+    or simply want to connect — feel free to reach out.  
+  </p>
 
-              {/* LinkedIn */}
-              <div className="flex items-center gap-4">
-                <div className="p-3 rounded-xl bg-gradient-to-br from-blue-600 to-blue-400">
-                  <Linkedin className="h-5 w-5 text-white" />
-                </div>
-                <div>
-                  <p className="font-medium text-white">LinkedIn</p>
-                  <a
-                    href="https://linkedin.com"
-                    target="_blank"
-                    className="text-white/70 hover:text-white hover:underline"
-                  >
-                    Connect with me
-                  </a>
-                </div>
-              </div>
+  <div className="space-y-6">
+    {/* Email */}
+    <div className="flex items-center gap-4">
+      <div className="p-3 rounded-xl bg-gradient-to-br from-primary to-secondary">
+        <Mail className="h-5 w-5 text-white" />
+      </div>
+      <div>
+        <p className="font-medium text-white">Email</p>
+        <a
+          href="mailto:akhileshreddy1246@gmail.com"
+          className="text-white/70 hover:text-white hover:underline"
+        >
+          akhileshreddy1246@gmail.com
+        </a>
+        <p className="text-xs text-white/40">
+          Best for detailed discussions
+        </p>
+      </div>
+    </div>
 
-              {/* WhatsApp */}
-              <div className="flex items-center gap-4">
-                <div className="p-3 rounded-xl bg-gradient-to-br from-green-500 to-emerald-500">
-                  <MessageCircle className="h-5 w-5 text-white" />
-                </div>
-                <div>
-                  <p className="font-medium text-white">WhatsApp</p>
-                  <a
-                    href="https://wa.me/917760007395"
-                    target="_blank"
-                    className="text-white/70 hover:text-white hover:underline"
-                  >
-                    Quick message
-                  </a>
-                </div>
-              </div>
+    {/* LinkedIn */}
+    <div className="flex items-center gap-4">
+      <div className="p-3 rounded-xl bg-gradient-to-br from-blue-600 to-blue-400">
+        <Linkedin className="h-5 w-5 text-white" />
+      </div>
+      <div>
+        <p className="font-medium text-white">LinkedIn</p>
+        <a
+          href="https://linkedin.com"
+          target="_blank"
+          className="text-white/70 hover:text-white hover:underline"
+        >
+          Connect professionally
+        </a>
+        <p className="text-xs text-white/40">
+          Opportunities & networking
+        </p>
+      </div>
+    </div>
+  </div>
+</motion.div>
 
-              <p className="text-white/60 pt-4">
-                I’m open to internships, full-time roles, freelance work, and
-                collaborative projects.
-              </p>
-            </div>
-          </motion.div>
 
           {/* Right: Contact Form */}
           <motion.div

@@ -64,14 +64,14 @@ export const Hero = () => {
               className="text-5xl md:text-7xl font-display font-bold mb-5 text-white"
             >
               Hi, I’m{' '}
-              <span className="gradient-text">Akhilesh Reddy</span> 👋
+              <span className="gradient-text">Akhilesh Reddy</span> 
             </motion.h1>
 
             <motion.p
               variants={itemVariants}
               className="text-xl md:text-2xl text-white/70 mb-6"
             >
-              Full-Stack Developer · Cloud Enthusiast · AI Explorer
+              Full-Stack Developer
             </motion.p>
 
             <motion.p

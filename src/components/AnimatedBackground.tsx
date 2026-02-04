@@ -1,13 +1,27 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
+import { TechOrb } from '../TechOrb';
 
 export const AnimatedBackground = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const [mouse, setMouse] = useState({ x: 0, y: 0 });
 
+  /* Mouse parallax */
+  useEffect(() => {
+    const move = (e: MouseEvent) => {
+      setMouse({
+        x: (e.clientX / window.innerWidth - 0.5) * 20,
+        y: (e.clientY / window.innerHeight - 0.5) * 20,
+      });
+    };
+    window.addEventListener('mousemove', move);
+    return () => window.removeEventListener('mousemove', move);
+  }, []);
+
+  /* Network canvas */
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
-
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
@@ -18,110 +32,105 @@ export const AnimatedBackground = () => {
     resize();
     window.addEventListener('resize', resize);
 
-    const POINTS = 65;
-    const MAX_DISTANCE = 130;
-
-    const points = Array.from({ length: POINTS }).map(() => ({
+    const nodes = Array.from({ length: 60 }).map(() => ({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
       vx: (Math.random() - 0.5) * 0.25,
       vy: (Math.random() - 0.5) * 0.25,
     }));
 
-    const animate = () => {
+    const draw = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      points.forEach(p => {
-        p.x += p.vx;
-        p.y += p.vy;
-
-        if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
-        if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+      nodes.forEach(n => {
+        n.x += n.vx;
+        n.y += n.vy;
+        if (n.x < 0 || n.x > canvas.width) n.vx *= -1;
+        if (n.y < 0 || n.y > canvas.height) n.vy *= -1;
       });
 
-      // Lines
-      for (let i = 0; i < POINTS; i++) {
-        for (let j = i + 1; j < POINTS; j++) {
-          const dx = points[i].x - points[j].x;
-          const dy = points[i].y - points[j].y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-
-          if (dist < MAX_DISTANCE) {
-            ctx.strokeStyle = `rgba(120, 160, 220, ${
-              0.25 * (1 - dist / MAX_DISTANCE)
-            })`;
-            ctx.lineWidth = 0.5;
+      for (let i = 0; i < nodes.length; i++) {
+        for (let j = i + 1; j < nodes.length; j++) {
+          const dx = nodes[i].x - nodes[j].x;
+          const dy = nodes[i].y - nodes[j].y;
+          const d = Math.sqrt(dx * dx + dy * dy);
+          if (d < 140) {
+            ctx.strokeStyle = `rgba(56,189,248,${0.12 * (1 - d / 140)})`;
+            ctx.lineWidth = 0.6;
             ctx.beginPath();
-            ctx.moveTo(points[i].x, points[i].y);
-            ctx.lineTo(points[j].x, points[j].y);
+            ctx.moveTo(nodes[i].x, nodes[i].y);
+            ctx.lineTo(nodes[j].x, nodes[j].y);
             ctx.stroke();
           }
         }
       }
 
-      // Points
-      points.forEach(p => {
-        ctx.fillStyle = 'rgba(220,230,255,0.5)';
+      nodes.forEach(n => {
+        ctx.fillStyle = 'rgba(226,232,240,0.45)';
         ctx.beginPath();
-        ctx.arc(p.x, p.y, 1.4, 0, Math.PI * 2);
+        ctx.arc(n.x, n.y, 1.2, 0, Math.PI * 2);
         ctx.fill();
       });
 
-      requestAnimationFrame(animate);
+      requestAnimationFrame(draw);
     };
 
-    animate();
-
+    draw();
     return () => window.removeEventListener('resize', resize);
   }, []);
 
   return (
-    <div className="fixed inset-0 -z-10 overflow-hidden bg-[#0b0f1a]">
-      {/* Dark aurora */}
+    <div
+      className="fixed inset-0 -z-10 overflow-hidden bg-[#05080f]"
+      style={{ perspective: '1000px' }}
+    >
+      {/* Grid */}
       <motion.div
-        className="absolute -top-1/3 left-0 h-[500px] w-full opacity-20 blur-3xl"
+        className="absolute inset-0 opacity-[0.04]"
         style={{
-          background:
-            'linear-gradient(120deg, #1e3a8a, #312e81, #0f766e)',
+          backgroundImage:
+            'linear-gradient(#ffffff 1px, transparent 1px), linear-gradient(90deg, #ffffff 1px, transparent 1px)',
+          backgroundSize: '48px 48px',
         }}
-        animate={{ x: ['-15%', '15%', '-15%'] }}
-        transition={{
-          duration: 26,
-          repeat: Infinity,
-          ease: 'easeInOut',
+        animate={{
+          rotateX: mouse.y * 0.25,
+          rotateY: -mouse.x * 0.25,
         }}
+        transition={{ type: 'spring', stiffness: 40 }}
       />
 
-      {/* Subtle vignette */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/40 to-black/70" />
+      {/* Soft glows */}
+      <motion.div
+        className="absolute top-1/4 left-1/4 h-[520px] w-[520px] rounded-full blur-[140px]"
+        style={{
+          background:
+            'radial-gradient(circle, rgba(37,99,235,0.4), transparent 70%)',
+        }}
+        animate={{ x: mouse.x, y: mouse.y }}
+        transition={{ duration: 12, repeat: Infinity }}
+      />
 
-      {/* Micro stars */}
-      {[...Array(8)].map((_, i) => (
-        <motion.span
-          key={i}
-          className="absolute h-1 w-1 rounded-full bg-white/40"
-          style={{
-            left: `${Math.random() * 100}%`,
-            top: `${Math.random() * 100}%`,
-          }}
-          animate={{
-            y: [0, -40, 0],
-            opacity: [0.2, 0.5, 0.2],
-          }}
-          transition={{
-            duration: 10 + Math.random() * 6,
-            repeat: Infinity,
-            delay: i * 2,
-            ease: 'easeInOut',
-          }}
-        />
-      ))}
+      <motion.div
+        className="absolute bottom-[-20%] right-[-10%] h-[520px] w-[520px] rounded-full blur-[140px]"
+        style={{
+          background:
+            'radial-gradient(circle, rgba(34,197,94,0.35), transparent 70%)',
+        }}
+        animate={{ x: -mouse.x, y: -mouse.y }}
+        transition={{ duration: 18, repeat: Infinity }}
+      />
 
-      {/* Constellation canvas */}
+      {/* Canvas network */}
       <canvas
         ref={canvasRef}
         className="absolute inset-0 pointer-events-none"
       />
+
+      {/* 🔥 REAL 3D OBJECT */}
+      <TechOrb />
+
+      {/* Vignette */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/50 to-black/85" />
     </div>
   );
 };

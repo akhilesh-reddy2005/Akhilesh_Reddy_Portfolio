@@ -6,13 +6,12 @@ import { Skills } from '@/components/Skills';
 import { Contact } from '@/components/Contact';
 import { Footer } from '@/components/Footer';
 import { AnimatedBackground } from '@/components/AnimatedBackground';
-import { CustomCursor } from '@/components/CustomCursor';
-
+import { ThreeBackground } from '@/components/ThreeBackground';
 
 const Index = () => {
   return (
-    <div className="min-h-screen relative cursor-none">
-      <CustomCursor />
+    <div className="min-h-screen relative">
+      <ThreeBackground />
       <AnimatedBackground />
       <Navbar />
       <Hero />
