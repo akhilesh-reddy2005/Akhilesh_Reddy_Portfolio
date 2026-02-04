@@ -53,7 +53,6 @@ export const Footer = () => {
           <div className="text-center text-white/60">
             <p className="flex items-center gap-1 justify-center">
               Designed & built with
-              <Heart className="h-4 w-4 text-red-500 fill-red-500" />
               by <span className="text-white font-medium">Akhilesh Reddy</span>
             </p>
             <p className="text-sm mt-2 text-white/40">

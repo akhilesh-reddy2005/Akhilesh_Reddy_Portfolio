@@ -7,6 +7,7 @@ import { Contact } from '@/components/Contact';
 import { Footer } from '@/components/Footer';
 import { AnimatedBackground } from '@/components/AnimatedBackground';
 import { CustomCursor } from '@/components/CustomCursor';
+import { ChatBot } from '@/api/ChatBot';
 
 const Index = () => {
   return (
@@ -18,6 +19,7 @@ const Index = () => {
       <About />
       <Projects />
       <Skills />
+      <ChatBot />
       <Contact />
       <Footer />
     </div>
