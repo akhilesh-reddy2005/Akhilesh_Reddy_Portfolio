@@ -1,0 +1,169 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-canvas: #F4F4F0;
+  --text-primary: #0B0B0B;
+  --border-primary: #0B0B0B;
+  --shadow-primary: #0B0B0B;
+  --grid-color: rgba(11, 11, 11, 0.08);
+
+  --accent-lime: #A3E635;
+  --accent-orange: #F97316;
+  --accent-cyan: #22D3EE;
+  --accent-pink: #EC4899;
+}
+
+.theme-light {
+  --bg-canvas: #F4F4F0;
+  --text-primary: #0B0B0B;
+  --border-primary: #0B0B0B;
+  --shadow-primary: #0B0B0B;
+  --grid-color: rgba(11, 11, 11, 0.08);
+}
+
+.theme-void {
+  --bg-canvas: #0C0C0C;
+  --text-primary: #F4F4F0;
+  --border-primary: #F4F4F0;
+  --shadow-primary: #000000;
+  --grid-color: rgba(244, 244, 240, 0.08);
+}
+
+.theme-glitch {
+  --bg-canvas: #050B05;
+  --text-primary: #00FF33;
+  --border-primary: #00FF33;
+  --shadow-primary: #000000;
+  --grid-color: rgba(0, 255, 51, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Space Grotesk', sans-serif;
+  background-color: var(--bg-canvas);
+  color: var(--text-primary);
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  overflow-x: hidden;
+}
+
+/* Base custom typography setup */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Syne', sans-serif;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+
+.font-mono-custom {
+  font-family: 'Space Mono', monospace;
+}
+
+/* Neo-Brutalist Layout Components */
+.neo-border {
+  border: 3px solid var(--border-primary);
+  border-radius: 0px !important;
+}
+
+.neo-shadow {
+  box-shadow: 6px 6px 0px var(--shadow-primary);
+}
+
+.neo-card {
+  border: 3px solid var(--border-primary);
+  box-shadow: 6px 6px 0px var(--shadow-primary);
+  background-color: var(--bg-canvas);
+  border-radius: 0px !important;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.2s ease;
+}
+
+.neo-card-hover:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 9px 9px 0px var(--shadow-primary);
+}
+
+.neo-btn {
+  border: 3px solid var(--border-primary);
+  box-shadow: 6px 6px 0px var(--shadow-primary);
+  border-radius: 0px !important;
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+  text-transform: uppercase;
+  background-color: var(--bg-canvas);
+  color: var(--text-primary);
+  transition: transform 0.1s ease, box-shadow 0.1s ease, background-color 0.2s ease, color 0.2s ease;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.neo-btn:hover:not(:disabled) {
+  transform: translate(-2px, -2px);
+  box-shadow: 8px 8px 0px var(--shadow-primary);
+}
+
+.neo-btn:active:not(:disabled) {
+  transform: translate(4px, 4px);
+  box-shadow: 2px 2px 0px var(--shadow-primary);
+}
+
+.neo-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Background graph grid */
+.graph-grid {
+  background-size: 30px 30px;
+  background-image: 
+    linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
+}
+
+/* Ticker Marquee Animation */
+@keyframes ticker-marquee {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.animate-ticker {
+  display: inline-flex;
+  white-space: nowrap;
+  animation: ticker-marquee 25s linear infinite;
+}
+
+/* Disable styles for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .animate-ticker {
+    animation: none !important;
+  }
+  
+  .neo-btn:hover:not(:disabled),
+  .neo-btn:active:not(:disabled),
+  .neo-card-hover:hover {
+    transform: none !important;
+    box-shadow: 6px 6px 0px var(--shadow-primary) !important;
+  }
+
+  * {
+    animation-delay: 0s !important;
+    animation-duration: 0s !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0s !important;
+    scroll-behavior: auto !important;
+  }
+}
