@@ -1,4 +1,4 @@
-import { Github, Linkedin, Instagram, Mail, Heart, ArrowUp } from 'lucide-react';
+import { Github, Linkedin, Instagram, Mail, ArrowUp } from 'lucide-react';
 import { Magnetic } from '@/components/ui/Magnetic';
 
 const footerLinks = [
