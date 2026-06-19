@@ -41,10 +41,10 @@ const interests = [
 ];
 
 const stats = [
-  { label: 'Projects Completed', value: '15+' },
-  { label: 'Hackathons', value: '5+' },
+  { label: 'Projects Completed', value: '5+' },
+  { label: 'Hackathons', value: '3+' },
   { label: 'Technologies', value: '20+' },
-  { label: 'Years of Code', value: '3+' },
+  { label: 'Years of Code', value: '1+' },
 ];
 
 export const About = () => {
@@ -72,7 +72,7 @@ export const About = () => {
             About Me
           </h2>
           <p className="font-mono-custom text-sm text-[var(--text-primary)]/80 max-w-2xl mx-auto uppercase">
-            [ I am a 3rd-year B.Tech Computer Science student at Jain University, driven to engineer uncompromised, performant web platforms. ]
+            Final-year Computer Science student at Jain University, focused on crafting modern, high-performance web experiences through clean code, scalable architecture, and user-centric design.
           </p>
         </div>
 

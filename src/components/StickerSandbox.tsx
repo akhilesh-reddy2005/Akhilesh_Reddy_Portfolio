@@ -17,9 +17,11 @@ const STICKERS: Sticker[] = [
   { id: 'brutalist', text: '📦 NEO-BRUTALIST', color: 'var(--accent-cyan)', x: '35%', y: '35%', rotate: -5 },
   { id: 'mern', text: '💻 MERN STACK', color: 'var(--accent-pink)', x: '12%', y: '60%', rotate: 6 },
   { id: 'cloud', text: '☁️ CLOUD DEVOPS', color: 'var(--accent-lime)', x: '68%', y: '55%', rotate: -15 },
-  { id: 'sih', text: '🏆 SIH HACKATHON WINNER', color: 'var(--accent-orange)', x: '38%', y: '72%', rotate: 8 },
+  { id: 'FullStck', text: 'Full Stack Developer', color: 'var(--accent-orange)', x: '38%', y: '72%', rotate: 8 },
   { id: 'jain', text: '🎓 JAIN UNIVERSITY', color: 'var(--accent-cyan)', x: '45%', y: '10%', rotate: -6 },
   { id: 'react', text: '⚛️ REACT / TS / FRAMER', color: 'var(--accent-pink)', x: '75%', y: '32%', rotate: 14 },
+  { id: 'Developer', text: 'Software Developer', color: 'var(--accent-cyan)', x: '45%', y: '10%', rotate: -6 },
+  { id: 'Vibe', text: 'Viber coder', color: 'var(--accent-cyan)', x: '35%', y: '35%', rotate: -5 },
 ];
 
 interface StickerSandboxProps {
@@ -55,9 +57,7 @@ export const StickerSandbox: React.FC<StickerSandboxProps> = ({
 
         {/* Sandbox Local Controls Row */}
         <div className="flex justify-between items-center mb-3 max-w-5xl mx-auto">
-          <span className="font-mono-custom text-[10px] text-[var(--text-primary)]/50 uppercase">
-            [ Sandbox Board: DRAG_ACTIVE ]
-          </span>
+
           <div className="flex gap-2">
             {/* Grid Toggle */}
             <button
@@ -79,8 +79,8 @@ export const StickerSandbox: React.FC<StickerSandboxProps> = ({
         </div>
 
         {/* Sandbox Canvas */}
-        <div 
-          ref={constraintsRef} 
+        <div
+          ref={constraintsRef}
           className="relative w-full h-[400px] border-[3px] border-[var(--border-primary)] bg-[var(--bg-canvas)] neo-shadow overflow-hidden select-none cursor-grab active:cursor-grabbing"
         >
           {/* Faint local grid overlay */}
@@ -115,10 +115,6 @@ export const StickerSandbox: React.FC<StickerSandboxProps> = ({
               </motion.div>
             );
           })}
-
-          <div className="absolute bottom-3 left-3 font-mono-custom text-[9px] text-[var(--text-primary)]/40 pointer-events-none">
-            [ STATUS: STICKER_SANDBOX_ACTIVE ]
-          </div>
         </div>
       </div>
     </section>

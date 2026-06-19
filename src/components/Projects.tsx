@@ -91,6 +91,31 @@ const projects: Project[] = [
     ]
   },
   {
+    title: "Desi Etsy Marketplace",
+    description:
+      "A multi-role e-commerce marketplace connecting local artisans with customers through a seamless online shopping experience.",
+    longDescription:
+      "Developed a full-featured artisan marketplace inspired by Etsy, enabling local sellers to showcase and sell handmade products. Implemented role-based authentication for customers, artisans, and administrators, along with product management, shopping cart, order tracking, and admin moderation features. Built a responsive and scalable frontend using React, TypeScript, and Tailwind CSS with efficient state management through Context API.",
+    tags: [
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Context API",
+      "React Router",
+      "Vite"
+    ],
+    color: "yellow",
+    code: "https://github.com/akhilesh-reddy2005/Infotact-Project-",
+    demo: "#",
+    featured: true,
+    impact: "Empowered local artisans through a scalable digital marketplace platform",
+    metrics: [
+      { label: "User Roles", value: "3" },
+      { label: "Core Modules", value: "10+" },
+      { label: "Responsive Pages", value: "15+" }
+    ]
+  },
+  {
     title: "Shinex Seeds Portfolio",
     description:
       "Optimized company portfolio and CSR showcase featuring automatic email responders and high SEO rank.",
@@ -200,23 +225,23 @@ export const Projects = () => {
             >
               <div>
                 {/* Top color tag */}
-                <div 
-                  className="h-3 w-16 border-[2px] border-[var(--border-primary)] mb-6 neo-shadow transition-all duration-300 group-hover:w-28" 
+                <div
+                  className="h-3 w-16 border-[2px] border-[var(--border-primary)] mb-6 neo-shadow transition-all duration-300 group-hover:w-28"
                   style={{ backgroundColor: project.color }}
                 />
-                
+
                 {/* Title */}
                 <h3 className="text-xl md:text-2xl font-display font-black text-[var(--text-primary)] mb-3 uppercase tracking-tight">
                   {project.title}
                 </h3>
-                
+
                 {project.impact && (
                   <div className="flex items-center gap-1.5 mb-4 text-[var(--text-primary)] font-mono-custom text-xs font-bold uppercase">
                     <TrendingUp className="w-4 h-4 text-[var(--text-primary)] stroke-[2.5]" />
                     {project.impact}
                   </div>
                 )}
-                
+
                 <p className="text-sm text-[var(--text-primary)]/85 leading-relaxed font-medium mb-6">
                   {project.description}
                 </p>
@@ -257,8 +282,8 @@ export const Projects = () => {
                 >
                   <div>
                     {/* Top color tag */}
-                    <div 
-                      className="h-2 w-10 border-[2px] border-[var(--border-primary)] mb-4 neo-shadow transition-all duration-300 group-hover:w-20" 
+                    <div
+                      className="h-2 w-10 border-[2px] border-[var(--border-primary)] mb-4 neo-shadow transition-all duration-300 group-hover:w-20"
                       style={{ backgroundColor: project.color }}
                     />
                     <h3 className="text-lg font-display font-black text-[var(--text-primary)] mb-2 uppercase">
@@ -327,7 +352,7 @@ export const Projects = () => {
 
                 {/* Section tag badge */}
                 <div className="flex items-center gap-2 mb-4">
-                  <span 
+                  <span
                     className="inline-block w-4 h-4 border-[2px] border-[var(--border-primary)]"
                     style={{ backgroundColor: selectedProject.color }}
                   />
@@ -343,7 +368,7 @@ export const Projects = () => {
 
                 {/* Impact Statement */}
                 {selectedProject.impact && (
-                  <div 
+                  <div
                     className="border-[2px] border-[var(--border-primary)] p-4 mb-6 neo-shadow font-mono-custom text-xs uppercase font-bold text-black"
                     style={{ backgroundColor: selectedProject.color }}
                   >

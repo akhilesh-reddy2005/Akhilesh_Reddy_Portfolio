@@ -121,9 +121,7 @@ export const Footer = () => {
             {/* Copyright */}
             <p className="font-mono-custom text-xs font-bold uppercase text-[var(--text-primary)]/80 text-center md:text-left">
               <span className="inline-flex items-center gap-1.5">
-                Made with
-                <Heart className="h-4 w-4 fill-red-500 text-red-500 animate-pulse" />
-                by Akhilesh Reddy
+                Made by Akhilesh Reddy
               </span>
               <span className="block md:inline md:ml-4">
                 © {new Date().getFullYear()} ALL RIGHTS RESERVED

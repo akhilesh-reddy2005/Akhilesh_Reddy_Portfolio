@@ -18,7 +18,7 @@ const contactMethods = [
     icon: MessageCircle,
     title: 'WhatsApp',
     value: 'Message me directly',
-    href: 'https://wa.me/919618843197',
+    href: 'https://wa.me/917760007395',
     color: 'var(--accent-lime)',
   },
   {
@@ -34,6 +34,7 @@ export const Contact = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState<string>('');
   const formRef = useRef<HTMLFormElement | null>(null);
   const prefersReducedMotion = usePrefersReducedMotion();
 
@@ -67,11 +68,13 @@ export const Contact = () => {
       formRef.current.reset();
 
       setTimeout(() => setSubmitStatus('idle'), 4000);
-    } catch (error) {
+    } catch (error: any) {
       setSubmitStatus('error');
+      const msg = error?.text || error?.message || JSON.stringify(error);
+      setErrorMessage(msg);
       toast({
         title: 'Form Submission Failure',
-        description: 'Please try again or email me directly.',
+        description: `Error details: ${msg}`,
       });
       console.error('Contact submission error:', error);
     } finally {
@@ -210,9 +213,12 @@ export const Contact = () => {
             )}
 
             {submitStatus === 'error' && (
-              <div className="flex items-center gap-3 p-4 border-[3px] border-[var(--border-primary)] bg-[var(--accent-orange)] text-black font-mono-custom text-xs font-bold uppercase neo-shadow">
-                <AlertCircle className="h-5 w-5 stroke-[2.5]" />
-                <span>Failed to send. Check console and configuration.</span>
+              <div className="flex items-start gap-3 p-4 border-[3px] border-[var(--border-primary)] bg-[var(--accent-orange)] text-black font-mono-custom text-xs font-bold uppercase neo-shadow">
+                <AlertCircle className="h-5 w-5 stroke-[2.5] mt-0.5 shrink-0" />
+                <div>
+                  <span className="block font-bold">Failed to send. Check console and configuration.</span>
+                  {errorMessage && <span className="block mt-1 normal-case font-normal text-black/80">{errorMessage}</span>}
+                </div>
               </div>
             )}
 
@@ -232,7 +238,7 @@ export const Contact = () => {
                   ) : (
                     <>
                       <Send className="h-4 w-4 stroke-[2.5]" />
-                      SEND TRANSMISSION
+                      SEND MESSAGE
                     </>
                   )}
                 </button>

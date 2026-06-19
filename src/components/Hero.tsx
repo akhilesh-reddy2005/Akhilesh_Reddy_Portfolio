@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import resumePDF from "@/assets/Akhilesh_Resume.pdf";
 import {
   Github,
   Linkedin,
@@ -78,8 +79,7 @@ export const Hero = () => {
               variants={itemVariants}
               className="text-base md:text-lg text-[var(--text-primary)]/80 mb-8 leading-relaxed max-w-2xl font-medium"
             >
-              I craft raw, performant web applications and intelligent systems. 
-              Specialized in the MERN stack, cloud computing, and AI-driven solutions with a relentless focus on high-fidelity user experiences.
+              I build scalable web applications and intelligent digital solutions that combine performance, innovation, and exceptional user experiences. Specialized in full-stack development, cloud technologies, and AI-powered systems.
             </motion.p>
 
             {/* CTAs with Magnetic Pull */}
@@ -89,7 +89,7 @@ export const Hero = () => {
             >
               <Magnetic>
                 <a
-                  href="/Akhilesh_Resume.pdf"
+                  href={resumePDF}
                   download="Akhilesh_Resume.pdf"
                   className="neo-btn px-6 py-4 text-sm bg-[var(--accent-lime)] text-black flex items-center gap-2 border-[3px]"
                 >
@@ -143,7 +143,7 @@ export const Hero = () => {
             <div className="relative w-64 h-64 md:w-80 md:h-80">
               {/* Offset Background Block */}
               <div className="absolute inset-0 border-[3px] border-[var(--border-primary)] bg-[var(--accent-orange)] translate-x-4 translate-y-4" />
-              
+
               {/* Core Avatar Frame */}
               <div className="absolute inset-0 border-[3px] border-[var(--border-primary)] bg-[var(--bg-canvas)] overflow-hidden">
                 <img
@@ -155,7 +155,7 @@ export const Hero = () => {
 
               {/* Decorative Corner Labels */}
               <div className="absolute -top-3.5 -left-3.5 bg-[var(--text-primary)] text-[var(--bg-canvas)] font-mono-custom text-[9px] font-bold px-2 py-0.5 border-[2px] border-[var(--border-primary)]">
-                IMG_099
+                Akhilesh Reddy
               </div>
             </div>
           </motion.div>

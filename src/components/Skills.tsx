@@ -30,10 +30,10 @@ const skillCategories = [
     skills: [
       { name: "Node.js", level: 85 },
       { name: "Express", level: 85 },
-      { name: "Python", level: 80 },
+      { name: "Java", level: 80 },
       { name: "REST APIs", level: 88 },
       { name: "PHP", level: 75 },
-      { name: "Java", level: 75 },
+      { name: "Python", level: 75 },
     ],
   },
   {
@@ -57,7 +57,7 @@ const skillCategories = [
       { name: "Firebase Hosting", level: 85 },
       { name: "Git/GitHub", level: 90 },
       { name: "Vercel", level: 88 },
-      { name: "Docker", level: 70 },
+
     ],
   },
   {
@@ -65,10 +65,10 @@ const skillCategories = [
     icon: Brain,
     color: "var(--accent-lime)",
     skills: [
-      { name: "Machine Learning", level: 75 },
-      { name: "Data Analysis", level: 80 },
-      { name: "Algorithms", level: 85 },
-      { name: "Problem Solving", level: 90 },
+      { name: "Machine Learning", level: 50 },
+      { name: "Data Analysis", level: 40 },
+      { name: "Algorithms", level: 75 },
+      { name: "Problem Solving", level: 80 },
     ],
   },
 ];
