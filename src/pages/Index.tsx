@@ -25,7 +25,6 @@ const Index = () => {
   const handleResetStickers = () => {
     setResetStickersKey(prev => prev + 1);
   };
-
   return (
     <div className={`min-h-screen relative overflow-hidden transition-colors duration-200 ${showGrid ? 'graph-grid' : ''}`}>
       {/* Neo-Brutalist Squares Custom Cursor */}
