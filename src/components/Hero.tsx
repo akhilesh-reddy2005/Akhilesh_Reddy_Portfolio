@@ -145,11 +145,11 @@ export const Hero = () => {
               <div className="absolute inset-0 border-[3px] border-[var(--border-primary)] bg-[var(--accent-orange)] translate-x-4 translate-y-4" />
 
               {/* Core Avatar Frame */}
-              <div className="absolute inset-0 border-[3px] border-[var(--border-primary)] bg-[var(--bg-canvas)] overflow-hidden">
+              <div className="absolute inset-0 border-[3px] border-[var(--border-primary)] bg-[var(--bg-canvas)] overflow-hidden interactive-hover">
                 <img
                   src={avatar}
                   alt="Akhilesh Reddy"
-                  className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-300"
+                  className="w-full h-full object-cover transition-all duration-300"
                 />
               </div>
 
