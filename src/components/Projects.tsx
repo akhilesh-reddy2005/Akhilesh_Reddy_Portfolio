@@ -37,100 +37,92 @@ const projects: Project[] = [
     ]
   },
   {
-    title: "Campus Reporting Portal",
+    title: "RoleLens",
     description:
-      "Real-time issue tracking system built during Buildverse Hackathon. Features status logs and Socket.io alerts.",
+      "AI-powered resume screening and job role recommendation platform with personalized career insights.",
     longDescription:
-      "A real-time complaint filing and monitoring dashboard developed under high pressure during the Buildverse Hackathon. It features socket-based messaging, enabling instant issue reporting to maintenance, active status updates for reporters, and admin analysis panels to filter issues by campus department.",
-    tags: ["React", "Node.js", "MongoDB", "Socket.io"],
-    color: "var(--accent-orange)",
-    code: "#",
-    demo: "",
-    featured: true,
-    impact: "Created in 24 hours at Buildverse Hackathon",
-    metrics: [
-      { label: "Response Delay", value: "Real-time" },
-      { label: "Build Time", value: "24 Hours" },
-      { label: "Database Ops", value: "Mongoose" }
-    ]
-  },
-  {
-    title: "Roadway Recovery Routing",
-    description:
-      "Power restoration recovery map leveraging Dijkstra's algorithm to optimize power grid repairs.",
-    longDescription:
-      "An intelligent disaster recovery system designed to map substation grids and calculate optimized repair routes post-storm. Utilizes Dijkstra's network routing algorithms paired with GIS data visualizations to help utility trucks navigate around blocked pathways and prioritize crucial grid segments.",
-    tags: ["Python", "GIS", "Algorithms", "NetworkX"],
-    color: "var(--accent-lime)",
-    code: "#",
-    demo: "",
-    featured: false,
-    impact: "Calculates optimized pathways in milliseconds",
-    metrics: [
-      { label: "Calculation Speed", value: "< 12ms" },
-      { label: "Algorithm Accuracy", value: "100%" },
-      { label: "Language Stack", value: "Python" }
-    ]
-  },
-  {
-    title: "Fitness AI Recommendation",
-    description:
-      "AI recommendation engine for custom workouts and diet planning. Developed for Smart India Hackathon.",
-    longDescription:
-      "An advanced analytics engine created for the Smart India Hackathon. It processes user metrics (age, heart rate targets, lifestyle, allergies) to compile tailored cardiovascular/strength training agendas and precise nutritional balance suggestions using predictive profiling.",
-    tags: ["AI", "Python", "Machine Learning", "Data Analytics"],
-    color: "var(--accent-pink)",
-    code: "https://github.com/akhilesh-reddy2005/SIH_Hackathon.git",
-    demo: "",
-    featured: true,
-    impact: "Engineered for Smart India Hackathon (SIH)",
-    metrics: [
-      { label: "Accuracy", value: "92.4%" },
-      { label: "Plan Compilation", value: "Instant" },
-      { label: "Target Audience", value: "Nationwide" }
-    ]
-  },
-  {
-    title: "Desi Etsy Marketplace",
-    description:
-      "A multi-role e-commerce marketplace connecting local artisans with customers through a seamless online shopping experience.",
-    longDescription:
-      "Developed a full-featured artisan marketplace inspired by Etsy, enabling local sellers to showcase and sell handmade products. Implemented role-based authentication for customers, artisans, and administrators, along with product management, shopping cart, order tracking, and admin moderation features. Built a responsive and scalable frontend using React, TypeScript, and Tailwind CSS with efficient state management through Context API.",
+      "RoleLens is a full-stack AI application that analyzes resumes and recommends the most suitable job roles using Google's Gemini AI. Users can securely upload PDF or DOCX resumes, receive ATS and resume scores, discover best-fit roles, identify missing skills, and get a personalized career roadmap. The platform includes JWT authentication, analysis history, a modern dashboard, and Supabase-powered data storage, providing an end-to-end experience for job seekers.",
     tags: [
       "React",
       "TypeScript",
       "Tailwind CSS",
-      "Context API",
-      "React Router",
-      "Vite"
+      "Node.js",
+      "Express.js",
+      "Supabase",
+      "PostgreSQL",
+      "Gemini AI",
+      "JWT",
+      "Vercel",
+      "Render"
     ],
-    color: "yellow",
-    code: "https://github.com/akhilesh-reddy2005/Infotact-Project-",
-    demo: "#",
+    color: "var(--accent-blue)",
+    code: "https://github.com/akhilesh-reddy2005/RoleLens",
+    demo: "https://your-vercel-url.vercel.app",
     featured: true,
-    impact: "Empowered local artisans through a scalable digital marketplace platform",
+    impact: "AI-powered career guidance with secure resume analysis and personalized recommendations.",
     metrics: [
-      { label: "User Roles", value: "3" },
-      { label: "Core Modules", value: "10+" },
-      { label: "Responsive Pages", value: "15+" }
+      { label: "Authentication", value: "JWT + Bcrypt" },
+      { label: "AI Analysis", value: "Gemini AI" },
+      { label: "Database", value: "Supabase" },
+      { label: "Deployment", value: "Vercel + Render" }
     ]
   },
   {
-    title: "Shinex Seeds Portfolio",
+    title: "Phishing Tracker Chrome Extension",
     description:
-      "Optimized company portfolio and CSR showcase featuring automatic email responders and high SEO rank.",
+      "AI-powered Chrome extension that detects phishing websites in real time using local heuristics and Google Safe Browsing API.",
     longDescription:
-      "A fast, responsive corporate website spotlighting seed catalogs, Corporate Social Responsibility initiatives, and farming statistics. Fully optimized for search engine crawl indices (high SEO visibility score) and fitted with background node mail triggers for client inquiries.",
-    tags: ["React", "CSS", "SEO", "EmailJS"],
-    color: "var(--accent-cyan)",
-    code: "#",
-    demo: "#",
-    featured: false,
-    impact: "Improved landing page load speeds and SEO indexing",
+      "Phishing Tracker is a browser security extension built to protect users from malicious and phishing websites while browsing. It continuously monitors visited URLs using a combination of custom heuristic analysis and the Google Safe Browsing API to identify potential threats in real time. The extension provides instant visual alerts, a modern popup dashboard with scan results, a searchable threat history, manual website scanning, and threat reporting features, helping users browse the web more securely.",
+    tags: [
+      "TypeScript",
+      "JavaScript",
+      "Chrome Extension",
+      "Google Safe Browsing API",
+      "HTML",
+      "CSS",
+      "Web Security",
+      "Browser APIs"
+    ],
+    color: "var(--accent-red)",
+    code: "https://github.com/akhilesh-reddy2005/phishingtracker_extensionn",
+    demo: "",
+    featured: true,
+    impact: "Enhances web security by detecting phishing websites in real time and alerting users before they interact with malicious content.",
     metrics: [
-      { label: "Lighthouse Performance", value: "98+" },
-      { label: "SEO Score", value: "100/100" },
-      { label: "Inquiry Leads", value: "+40%" }
+      { label: "Threat Detection", value: "Real-time" },
+      { label: "Security API", value: "Google Safe Browsing" },
+      { label: "Platform", value: "Chrome Extension" },
+      { label: "Language", value: "TypeScript" }
+    ]
+  },
+  {
+    title: "AI Fitness & Nutrition Management",
+    description:
+      "Full-stack fitness and nutrition management platform with AI-powered coaching, meal tracking, and personalized health insights.",
+    longDescription:
+      "Developed during the Smart India Hackathon (SIH), this full-stack web application helps users monitor their fitness journey through intelligent nutrition tracking and AI-assisted coaching. The platform features secure Firebase Authentication, personalized dashboards, meal logging, daily macronutrient tracking, nutrition analytics, and an AI fitness chatbot that provides customized workout and dietary recommendations. Built with React.js, Node.js, Express.js, and Firebase, the application delivers a seamless and scalable health management experience.",
+    tags: [
+      "React.js",
+      "Node.js",
+      "Express.js",
+      "Firebase",
+      "Firestore",
+      "JavaScript",
+      "REST API",
+      "AI Chatbot",
+      "Authentication",
+      "CSS3"
+    ],
+    color: "var(--accent-green)",
+    code: "https://github.com/akhilesh-reddy2005/SIH_Hackathon",
+    demo: "",
+    featured: true,
+    impact: "Developed as a Smart India Hackathon project to promote healthier lifestyles through AI-driven fitness coaching and personalized nutrition management.",
+    metrics: [
+      { label: "Authentication", value: "Firebase Auth" },
+      { label: "Database", value: "Firestore" },
+      { label: "AI Feature", value: "Fitness Coach" },
+      { label: "Platform", value: "Full Stack Web App" }
     ]
   },
 ];
