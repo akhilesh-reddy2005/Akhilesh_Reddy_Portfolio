@@ -55,7 +55,7 @@ const projects: Project[] = [
       "Vercel",
       "Render"
     ],
-    color: "var(--accent-green)",
+    color: "var(--accent-lime)",
     code: "https://github.com/akhilesh-reddy2005/RoleLens",
     demo: "",
     featured: true,
@@ -83,7 +83,7 @@ const projects: Project[] = [
       "Web Security",
       "Browser APIs"
     ],
-    color: "var(--accent-yellow)",
+    color: "var(--accent-orange)",
     code: "https://github.com/akhilesh-reddy2005/phishingtracker_extensionn",
     demo: "",
     featured: true,
@@ -113,7 +113,7 @@ const projects: Project[] = [
       "Authentication",
       "CSS3"
     ],
-    color: "var(--accent-blue)",
+    color: "var(--accent-pink)",
     code: "https://github.com/akhilesh-reddy2005/SIH_Hackathon",
     demo: "",
     featured: true,
