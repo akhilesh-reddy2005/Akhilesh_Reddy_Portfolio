@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import resumePDF from "@/assets/Akhilesh_Resume.pdf";
+import resumePDF from "@/assets/AkhileshReddy_Resume.pdf";
 import {
   Github,
   Linkedin,
@@ -90,7 +90,7 @@ export const Hero = () => {
               <Magnetic>
                 <a
                   href={resumePDF}
-                  download="Akhilesh_Resume.pdf"
+                  download="AkhileshReddy_Resume.pdf"
                   className="neo-btn px-6 py-4 text-sm bg-[var(--accent-lime)] text-black flex items-center gap-2 border-[3px]"
                 >
                   <Download className="h-4 w-4 stroke-[2.5]" />

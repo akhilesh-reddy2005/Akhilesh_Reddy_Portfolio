@@ -1,5 +1,6 @@
 import { Github, Linkedin, Instagram, Mail, ArrowUp } from 'lucide-react';
 import { Magnetic } from '@/components/ui/Magnetic';
+import resumePDF from '@/assets/AkhileshReddy_Resume.pdf';
 
 const footerLinks = [
   { label: 'GitHub', href: 'https://github.com/akhilesh-reddy2005' },
@@ -63,7 +64,8 @@ export const Footer = () => {
             <ul className="space-y-2">
               <li>
                 <a
-                  href="/Akhilesh_Resume.pdf"
+                  href={resumePDF}
+                  download="AkhileshReddy_Resume.pdf"
                   target="_blank"
                   rel="noreferrer"
                   className="font-mono-custom text-xs font-bold uppercase text-[var(--text-primary)]/75 hover:text-[var(--text-primary)] hover:underline transition-colors"
