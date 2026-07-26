@@ -26,7 +26,7 @@ const projects: Project[] = [
       "A comprehensive digital bus pass platform solving student transportation bottlenecks. Features instant ticket/pass generation, admin approval queues, QR-based verification, and automated renewal reminders. Integrated with Firebase for secure, real-time Firestore database updates and user authentication.",
     tags: ["React", "Firebase", "Firestore", "Authentication"],
     color: "var(--accent-cyan)",
-    code: "#",
+    code: "https://github.com/akhilesh-reddy2005/buss-pass_final.git",
     demo: "https://buss-passfinal-chi.vercel.app/",
     featured: true,
     impact: "Digitized pass management for 1000+ campus students",
@@ -55,9 +55,9 @@ const projects: Project[] = [
       "Vercel",
       "Render"
     ],
-    color: "var(--accent-blue)",
+    color: "var(--accent-green)",
     code: "https://github.com/akhilesh-reddy2005/RoleLens",
-    demo: "https://your-vercel-url.vercel.app",
+    demo: null,
     featured: true,
     impact: "AI-powered career guidance with secure resume analysis and personalized recommendations.",
     metrics: [
@@ -83,7 +83,7 @@ const projects: Project[] = [
       "Web Security",
       "Browser APIs"
     ],
-    color: "var(--accent-red)",
+    color: "var(--accent-yellow)",
     code: "https://github.com/akhilesh-reddy2005/phishingtracker_extensionn",
     demo: "",
     featured: true,
@@ -113,7 +113,7 @@ const projects: Project[] = [
       "Authentication",
       "CSS3"
     ],
-    color: "var(--accent-green)",
+    color: "var(--accent-blue)",
     code: "https://github.com/akhilesh-reddy2005/SIH_Hackathon",
     demo: "",
     featured: true,
