@@ -57,7 +57,7 @@ const projects: Project[] = [
     ],
     color: "var(--accent-green)",
     code: "https://github.com/akhilesh-reddy2005/RoleLens",
-    demo: null,
+    demo: "",
     featured: true,
     impact: "AI-powered career guidance with secure resume analysis and personalized recommendations.",
     metrics: [
